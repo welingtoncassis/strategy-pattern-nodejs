@@ -48,6 +48,7 @@ class Postgres extends ICrud {
 //classe abstrata de contexto
 class ContextStrategy {
     constructor(strategy) {
+        super()
         this._database = strategy
     }
 
