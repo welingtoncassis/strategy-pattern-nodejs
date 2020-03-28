@@ -25,7 +25,7 @@ class MongoDB extends ICrud {
         const connection = Mongoose.connection
         this._driver = connection
         connection.once('open', () => console.log('database rodando!!'))
-
+        this.defineModel()
     }
 
     async isConnected() {
@@ -58,12 +58,9 @@ class MongoDB extends ICrud {
         this._herois = Mongoose.model('herois', heroiSchema)
     }
 
-    async create(item) {
-        const resultCadastrar = await model.create({
-            nome: 'Flash',
-            poder: 'Velocidade'
-        })
-        console.log('Result cadastrar', resultCadastrar )
+    create(item) {
+        if(!item) throw new Error('Item inválido')
+        return this._herois.create(item)
     }
 }
 
