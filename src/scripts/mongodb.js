@@ -27,6 +27,7 @@ db.herois.findOne()
 db.herois.find().limit(5).sort({nome: -1})
 db.herois.find({nome: 'Flash'}).pretty()
 db.herois.count()
+db.herois.find({nome: 'Flash'}).limit(1).pretty()
 
 // Update
 

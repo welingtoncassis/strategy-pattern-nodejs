@@ -62,6 +62,10 @@ class MongoDB extends ICrud {
         if(!item) throw new Error('Item inválido')
         return this._herois.create(item)
     }
+
+    read(item, skip=0, limit=10) {
+        return this._herois.find(item).skip(skip).limit(limit)
+    }
 }
 
 module.exports = MongoDB
