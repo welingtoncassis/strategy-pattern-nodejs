@@ -28,7 +28,7 @@ describe('MongoDB Suite de testes', function() {
         const result = await context.create(MOCK_HEROI_ATUALIZAR)
         MOCK_HEROI_ID = result._id
     })
-    it.only('verificar conexao', async () => {
+    it('verificar conexao', async () => {
         const result = await context.isConnected()
         console.log(result)
         const expected = 'conectado'
