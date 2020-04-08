@@ -1,3 +1,7 @@
+# COMANDOS DOCKER
+
+## ---- POSTGRES
+
 docker run --name postgres -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=admin -e POSTGRES_DB=heroes -p 5432:5432 postgres
 
 docker exec -it postgres /bin/bash
